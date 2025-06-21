@@ -1,5 +1,8 @@
 console.log('running');
 
+import {main} from './script.js';
+
+
 let cards = [
           {
                     image : '../Songs/cover.jpg',
@@ -42,29 +45,76 @@ function displayCards() {
 
 displayCards();
 
+
+let songDiscription = {
+          title : '',
+          artist: '',
+          genre: '',
+          coverImg: '',
+          duration: '',
+}
+
+let songAlbum = {
+          songs : [],
+          coverImg : '',
+          title : '',
+}
+
+// let songList;
+let songList =songAlbum.songs;
+async function songLoad() {
+          songList = await main();
+          console.log("Checking "+ songList)
+          songList.forEach(song => {
+                    console.log(song);
+                    songList.push(song);
+          })
+          // document.querySelector('source').innerHTML = `${songList[1]}`
+          console.log("Checking 2" +songList[1])
+          console.log(typeof(songList))
+
+          song.src = songList[0];
+          song.load();
+          await loadingData()
+}
+songLoad();
+console.log(songAlbum)
+
+
+
 let progress = document.querySelector('.progress')
 let song = document.querySelector('.song')
 let controlIcon = document.querySelector('.ctrl-icon')
+let forward = document.querySelector('.js-forward')
 
 
 async function loadingData() {
           await new Promise((resolve) => {
-                     song.addEventListener("loadedmetadata", () => {
-                              progress.max = song.duration;
-                              progress.value = song.currentTime;
+                    //  song.addEventListener("loadedmetadata", () => {
+                    //           progress.max = song.duration;
+                    //           progress.value = song.currentTime;
+                    //           document.querySelector('.js-duration').innerHTML = formatTime(song.duration);
+                    //           resolve();
+                    // });
 
-                               if (!isNaN(song.duration) && song.duration !== Infinity) {
+                    const onMetadata = () => {
+                              if (!isNaN(song.duration)) {
+                                        progress.max = song.duration;
+                                        progress.value = song.currentTime;
                                         document.querySelector('.js-duration').innerHTML = formatTime(song.duration);
+                                        song.removeEventListener("loadedmetadata", onMetadata);
+                                        resolve();
                               }
-                              resolve();
-                    });
+                    };
+                    song.addEventListener("loadedmetadata", onMetadata);
+
           })
           // document.querySelector('.js-duration').innerHTML = formatTime(song.duration);
 }
 loadingData();
 
 let playToggle = 1;
-function playPause() {
+window.playPause  = function() {
           if(playToggle){
                     song.play();
                     playToggle = 0;
@@ -94,3 +144,7 @@ function formatTime(seconds) {
           const secs = Math.floor(seconds % 60);
           return `${mins < 10 ? "0" + mins : mins}:${secs < 10 ? "0" + secs : secs}`;
 }
+
+forward.addEventListener('click', () => {
+
+})

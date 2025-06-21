@@ -3,14 +3,14 @@ console.log("Hello world");
 
 let a = fetch("http://127.0.0.1:5500/Songs/")
 
-async function main(){
+export async function main(){
         let a = await fetch("http://127.0.0.1:5500/Songs/");
         let response = await a.text();
-        console.log(response);
+//         console.log(response);
         let div = document.createElement('div');
         div.innerHTML = response;
         let aArray = div.querySelectorAll("a");
-        console.log(aArray)
+//         console.log(aArray)
 
         let songArray = [];
         for(let i=0; i<aArray.length; i++){
@@ -20,6 +20,5 @@ async function main(){
                     }
         }
         console.log(songArray);
-}
-
-main();         
+        return songArray;
+}  
