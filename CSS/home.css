@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* .noto-sans-regular {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+* {
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+          font-family: "Noto Sans", sans-serif;
+          font-optical-sizing: auto;
+          font-style: normal;
+}
+
+
+/* .container {
+          display: flex;
+          height: 100vh;
+          } */
+          
+.container {
+          /* border: 2px solid crimson; */
+          position: relative;
+          display: grid;
+          /* grid-template-rows: 1fr 1fr ; */
+          grid-template-columns: 1fr 50fr;
+          grid-template-areas:  
+                    'left right'
+                    'footer footer';
+          height: 100vh;
+          width: 100vw;
+}
+
+.left {
+          grid-area: left;
+          /* border: 2px solid red; */
+          width: 280px;
+          background-color: #090707;
+          height: 100%;
+          box-shadow: 2px 2px 2px #110e0e;
+}
+
+.right {
+          height: 100%;
+          grid-area: right;
+          padding-top: 20px;
+          padding-left: 30px;
+          /* border: 2px solid yellow; */
+          width: 100%;
+          background-color: #120f0f;
+          overflow:hidden;
+          overflow-y: scroll;
+}
+
+.s1, .s2, .s3, .s4 {
+    padding: 10px;
+    margin: 20px 15px;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.s1 li img {
+    width: 34px;
+    height: 24px;
+}
+
+.secLine {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.s2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.s3 img {
+    width : 34px;
+    height: 34px;
+}
+
+.s4{
+    line-height: 30px;
+}
+
+.right-section1 {
+          display:  flex;
+          align-items: center;
+          /* border: 2px solid red; */
+          gap: 60px;
+          margin-bottom: 30px;
+}
+
+.block {
+          width: 280px;
+          background-color: #181818;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+}
+
+.block img {
+          width: 60px;
+          height: 60px;
+}
+
+.right-section2 {
+          margin-top: 20px;
+          display: flex;
+          gap: 25px;
+          margin-bottom: 20px;
+}
+
+.discovery-card {
+          padding: 10px;
+          border-radius: 6px;
+}
+.discovery-card img {
+          border-radius: 50%;
+          width: 160px;
+          height: 160px;
+}
+
+.right-section3 {
+          display: flex;
+          gap: 25px;
+}
+
+.sec3-card {
+          padding: 10px;
+          border-radius: 6px;
+          width: 180px;
+          overflow: hidden;
+}
+
+.sec3-card img {
+          /* border-radius: 50%; */
+          width: 160px;
+          height: 160px;
+}
+
+.footer {
+          /* position: absolute; */
+          /* height: 14%;  */
+          padding: 20px;
+          grid-area: footer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          flex-direction: column;
+          bottom: 0px;
+          background-color: #181414;
+          box-shadow: -1px -20px 25px #120f0f;
+}
+
+.footer img {
+          width: 20px;
+          height: 20px;
+}
+
+.play-pause img {
+          /* border: 2px solid red; */
+          width: 40px;
+           height: 40px;
+}
+.controls{
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          justify-content: center;
+}
+
+.controls p{
+          cursor: pointer;
+}
+
+.progress {
+          /* -webkit-appearance: none; */
+          width: 50vw;
+          height: 3px;
+          border-radius: 50px;
+          background-color:  #5d5a5a; 
+          cursor: pointer;
+}
+
+.slider {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+}
+
+.slider p {
+          color: #8c8a8a;
+}
+
+audio {
+          display: none;
+}

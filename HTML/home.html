@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Multi-media Player</title>
+          <link rel="stylesheet" href="../CSS/home.css">
+          <link rel="stylesheet" href="../CSS/utlityClass.css">
+</head>
+
+<body>
+          <div class="container">
+                    <div class="left grey0">
+                              <section class="s1">
+                                        <ul>
+                                                  <li><img src="../home.svg" alt=""><span class="t1">Home</span></li>
+                                                  <li><img src="../Search.svg" alt=""><span class="t1">Search</span></li>
+                                                  <li><img src="../Library.svg" alt=""><span class="t1">Your Library</span>
+                                                  </li>
+                                        </ul>
+                              </section>
+
+                              <section class="s3">
+                                        <ul>
+                                                  <li><img src="../createPlaylist.svg" alt=""><span class="t1">Create
+                                                                      Playlist</span>t</li>
+                                                  <li><img src="../likedSongs.svg" alt=""><span class="t1">Liked
+                                                                      Songs</span></li>
+                                        </ul>
+                              </section>
+
+                              <section class="s2">
+                                        <svg width="238" height="2" viewBox="0 0 238 2" fill="none"
+                                                  xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M0 1H238" stroke="white" stroke-opacity="0.12" />
+                                        </svg>
+                              </section>
+
+                              <section class="s4">
+                                        <li class="t2">Running Playlist</li>
+                                        <li class="t2">21st Birtday</li>
+                                        <li class="t2">April, 2023</li>
+                                        <li class="t2">Gym Session</li>
+                                        <li class="t2">Classic Anthems</li>
+                                        <li class="t2">R&B Favourites</li>
+                                        <li class="t2">Classical Music</li>
+                                        <li class="t2">Hayleys Bday</li>
+                                        <li class="t2">Discover Weekly</li>
+                                        <li class="t2">Liked From Radio</li>
+                              </section>
+                    </div>
+
+                    <div class="right grey1">
+                              <h1 class="right-t1">Hello</h1>
+                              <div class="right-section1">
+                                        <div class="block block1">
+                                                  <img src="../Images/img1.svg" alt="">
+                                                  <p class="right-t3">Dan & Hayley</p>
+                                        </div>
+                                        <div class="block block2">
+                                                  <img src="../Images/img2.svg" alt="">
+                                                  <p class="right-t3">SOS</p>
+                                        </div>
+                                        <div class="block block3">
+                                                  <img src="../Images/img3.svg" alt="">
+                                                  <p class="right-t3">Stranger in the Alps</p>
+                                        </div>
+                              </div>
+
+                              <h1 class="right-t2">Discovery Picks for you</h1>
+                              <div class="right-section2">
+                                        <div class="discovery-card discovery-card1 grey2">
+                                                  <img src="../Images/img4.svg" alt="">
+                                                  <p class="right-t3">Bon Iver</p>
+                                                  <p class="right-t4">Artist</p>
+                                        </div>
+                                        <div class="discovery-card discovery-card2 grey2">
+                                                  <img src="../Images/img5.svg" alt="">
+                                                  <p class="right-t3">Bon Iver</p>
+                                                  <p class="right-t4">Artist</p>
+                                        </div>
+                                        <div class="discovery-card discovery-card3 grey2">
+                                                  <img src="../Images/img6.svg" alt="">
+                                                  <p class="right-t3">Bon Iver</p>
+                                                  <p class="right-t4">Artist</p>
+                                        </div>
+                                        <div class="discovery-card discovery-card4 grey2">
+                                                  <img src="../Images/img7.svg" alt="">
+                                                  <p class="right-t3">Bon Iver</p>
+                                                  <p class="right-t4">Artist</p>
+                                        </div>
+                              </div>
+
+                              <h1 class="right-t2">Made for you</h1>
+                              <div class="right-section3">
+                                        
+                              </div>
+                    </div>
+
+                    <div class="footer">
+                              <audio class="song" value="0" preload="metadata">
+                                        <source src="../Songs/[03] - Witch of the Woods.mp3"> 
+
+                              </audio>
+                              <div class="controls">
+                                        <p><img src="../Images/shuffle.svg" alt=""></p>
+                                        <p><img src="../Images/backward.svg" alt=""></p>
+                                        <p  class="play-pause ctrl-icon" onclick="playPause()"><img src="../Images/play.svg" alt=""></p>
+                                        <p><img src="../Images/forward.svg" alt=""></p>
+                                        <p><img src="../Images/repeat.svg" alt=""></p>
+                              </div>
+
+                              <div class="slider">
+                                        <p class="js-current-time" >00:00</p>
+                                        <input type="range" name="" id="" value="0" class="progress" style="accent-color: #d9d9d9;">
+                                        <p class=" js-duration">00:00</p>
+                              </div>
+                    </div>
+          </div>
+
+
+          <script src="../Scripts/script.js"></script>
+          <script src="../Scripts/home.js"></script>
+</body>
+
+</html>
