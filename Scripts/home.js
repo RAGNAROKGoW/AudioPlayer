@@ -74,18 +74,32 @@ async function songLoad() {
           console.log(typeof(songList))
 
           song.src = songList[0];
+          console.log(songList[0].split('%20').slice(2));
+          
+          document.querySelector('.songTitle').innerHTML = `
+                    ${songString(songList[0].split('%20').splice(2, 3))}
+          `;
           song.load();
           await loadingData()
 }
 songLoad();
 console.log(songAlbum)
 
-
+function songString(array) {
+          let resultString ='';
+          array.forEach(element => {
+                    resultString += `${element + ' ' }`;
+          })
+          resultString = resultString.split('.mp3')
+          console.log(resultString[0])
+          return resultString[0];
+}
 
 let progress = document.querySelector('.progress')
 let song = document.querySelector('.song')
 let controlIcon = document.querySelector('.ctrl-icon')
 let forward = document.querySelector('.js-forward')
+let backward = document.querySelector('.js-backward');
 
 
 async function loadingData() {
@@ -145,6 +159,48 @@ function formatTime(seconds) {
           return `${mins < 10 ? "0" + mins : mins}:${secs < 10 ? "0" + secs : secs}`;
 }
 
-forward.addEventListener('click', () => {
+let i=0;
+function forwardOperation() {
+          forward.addEventListener('click', async () => {
+                    song.src = songList[++i];
+                    song.load();
+                    await loadingData();
+                    song.play();
+                    document.querySelector('.ctrl-icon').innerHTML = (`
+                              <img src="../Images/pause.svg" alt=""></p>
+                    `)
+                    document.querySelector('.songTitle').innerHTML = `
+                    ${songString(songList[i].split('%20').splice(2))}
+                    `;
+                    playToggle = 0;
+          })
+}
+forwardOperation();
 
-})
+function backwardOperation() {
+          backward.addEventListener('click', async () => {
+                    if(i>0) {
+                              song.src = songList[--i];
+                              document.querySelector('.songTitle').innerHTML = `
+                    ${songString(songList[i].split('%20').splice(2))}
+          `;
+                    } else {
+                              song.src = songList[0];
+                              i=0;
+                              document.querySelector('.songTitle').innerHTML = `
+                    ${songString(songList[0].split('%20').splice(2))}
+          `;
+                    }
+                    song.load();
+                    await loadingData();
+                    song.play();
+                    document.querySelector('.ctrl-icon').innerHTML = (`
+                              <img src="../Images/pause.svg" alt=""></p>
+                    `)
+                    playToggle = 0;
+          })
+}
+backwardOperation();
+
+
+document.querySelector('.songTitle').innerHTML = "hello"

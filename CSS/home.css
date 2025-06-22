@@ -162,21 +162,60 @@ ul {
 }
 
 .footer {
-          /* position: absolute; */
-          /* height: 14%;  */
           padding: 20px;
           grid-area: footer;
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-rows: 1fr;
+          justify-items: center;
           align-items: center;
-          justify-content: center;
           width: 100%;
-          flex-direction: column;
           bottom: 0px;
           background-color: #181414;
           box-shadow: -1px -20px 25px #120f0f;
 }
 
-.footer img {
+.mainFeatures {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+}
+
+.playingSongDetails {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+          border: 2px solid red;        
+          height: 60px;
+          /* width: 190px; */
+}
+
+.songTitle {
+          color: #fff;
+          word-wrap: break-word;
+          height: 20px;
+          width: 150px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+}
+
+.artistName {
+          color: #8c8a8a;
+          font-size: 12px;
+}
+.playingSongDetails img {
+          height: 100%;
+          width: 100%;
+          background-position: center;
+          background-size: cover;
+          /* border-radius: 5px; */
+}
+
+.mainFeatures img {
           width: 20px;
           height: 20px;
 }
